@@ -1,0 +1,12 @@
+[Unit]
+Description=frps service
+After=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/root/frps/frps -c /root/frps/frps.toml
+Restart=on-failure
+RestartSec=5s
+ 
+[Install]
+WantedBy=multi-user.target
